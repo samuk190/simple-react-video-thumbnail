@@ -1,4 +1,4 @@
-# simple-react-video-thumbnail
+# simple-react-video-thumbnail-controls
 
 This react component is designed to provide a quick, seamless way to display an html5 video component, and to select a point from the video to use as a thumbnail.
 
@@ -11,7 +11,7 @@ In browsers that do not support full functionality, or when thumbnail generation
 
 ## Props
 
-Currently, the component uses only two properties, the video source URL(string), and the time in seconds of the frame that you want to use as a thumbnail (number).
+Currently, the component uses only three properties, the video source URL(string), the time in seconds of the frame that you want to use as a thumbnail (number), and controls, which enable play/pause in case you want only thumbnail to show.
 
 ## Usage
 

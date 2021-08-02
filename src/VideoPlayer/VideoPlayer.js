@@ -21,16 +21,17 @@ export default class VideoPlayer extends Component {
     e.preventDefault();
     this.setState({ showVideo: true, showThumb: false });
     this.videoRef.play();
+  
   }
 
   render() {
     return (
       <div className="video-player">
-        <video className="video-player__video" controls ref={video => (this.videoRef = video)} preload="metadata" playsInline>
-          <source src={this.props.videoUrl} type="video/mp4" />
+        <video className="video-player__video" ref={video => (this.videoRef = video)} preload="metadata" playsInline>
+          <source controls src={this.props.videoUrl} type="video/mp4" />
           your browser does not support the video tag.
         </video>
-        <a href="#" onClick={e => this.videoPlay(e)}>
+        <a href="#" onClick={this.props.controls ? e => this.videoPlay(e) : false}>
           <div className="video-player__thumbnail-container" style={{ display: this.state.showThumb ? 'block' : 'none' }}>
             <div className="video-player__thumbnail-container__thumbnail" onLoad={e => this.thumbLoaded(e)}>
               <VideoThumbnail videoUrl={this.props.videoUrl} snapshotAtTime={this.props.snapshotAt} />
@@ -47,5 +48,6 @@ export default class VideoPlayer extends Component {
 
 VideoPlayer.propTypes = {
   videoUrl: PropTypes.string,
-  snapshotAt: PropTypes.number
+  snapshotAt: PropTypes.number,
+  controls: PropTypes.bool
 };

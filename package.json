@@ -1,10 +1,10 @@
 {
-  "name": "simple-react-video-thumbnail",
+  "name": "simple-react-video-thumbnail-controls",
   "version": "0.0.7",
-  "description": "Provides video tag and thumbnail at arbitrary point in video where these features are supported",
-  "author": "Ben Hart",
+  "description": "Modified version Provides video tag and thumbnail at arbitrary point in video where these features are supported",
+  "author": "Samuk190",
   "license": "MIT",
-  "repository": "https://github.com/FinnovateIo/React-simple-video",
+  "repository": "https://github.com/samuk190/simple-react-video-thumbnail",
   "main": "./dist/VideoPlayer/VideoPlayer.js",
   "unpkg": "./index.js",
   "keywords": [

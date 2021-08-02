@@ -116,17 +116,17 @@
           { className: 'video-player' },
           _react2.default.createElement(
             'video',
-            { className: 'video-player__video', controls: true, ref: function ref(video) {
+            { className: 'video-player__video', ref: function ref(video) {
                 return _this2.videoRef = video;
               }, preload: 'metadata', playsInline: true },
-            _react2.default.createElement('source', { src: this.props.videoUrl, type: 'video/mp4' }),
+            _react2.default.createElement('source', { controls: true, src: this.props.videoUrl, type: 'video/mp4' }),
             'your browser does not support the video tag.'
           ),
           _react2.default.createElement(
             'a',
-            { href: '#', onClick: function onClick(e) {
+            { href: '#', onClick: this.props.controls ? function (e) {
                 return _this2.videoPlay(e);
-              } },
+              } : false },
             _react2.default.createElement(
               'div',
               { className: 'video-player__thumbnail-container', style: { display: this.state.showThumb ? 'block' : 'none' } },
@@ -156,6 +156,7 @@
 
   VideoPlayer.propTypes = {
     videoUrl: _propTypes2.default.string,
-    snapshotAt: _propTypes2.default.number
+    snapshotAt: _propTypes2.default.number,
+    controls: _propTypes2.default.bool
   };
 });
